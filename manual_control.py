@@ -38,8 +38,8 @@ import argparse
 import logging
 import random
 import time
-#import os
-#os.environ['SDL_VIDEODRIVER'] = 'dummy'
+import os
+os.environ['SDL_VIDEODRIVER'] = 'dummy'
 
 try:
     import pygame
