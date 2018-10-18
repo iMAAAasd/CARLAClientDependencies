@@ -66,7 +66,7 @@ except ImportError:
 
 WINDOW_WIDTH = 320
 WINDOW_HEIGHT = 240
-START_POSITION = carla.Transform(carla.Location(x=180.0, y=199.0, z=40.0))
+START_POSITION = carla.Transform(carla.Location(x=320.0, y=199.0, z=40.0))
 CAMERA_POSITION = carla.Transform(carla.Location(x=0.5, z=1.40))
 
 
