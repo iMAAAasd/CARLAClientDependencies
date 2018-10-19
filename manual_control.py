@@ -66,7 +66,7 @@ except ImportError:
 
 WINDOW_WIDTH = 320
 WINDOW_HEIGHT = 240
-START_POSITION = carla.Transform(carla.Location(x=320.0, y=199.0, z=40.0))
+#START_POSITION = carla.Transform(carla.Location(x=320.0, y=199.0, z=40.0))
 CAMERA_POSITION = carla.Transform(carla.Location(x=0.5, z=1.40))
 
 
@@ -99,7 +99,9 @@ class CarlaGame(object):
 
             world = self._client.get_world()
             blueprint = random.choice(world.get_blueprint_library().filter('vehicle'))
-            self._vehicle = world.spawn_actor(blueprint, START_POSITION)
+            startX = float(randrange(130, 350, 10))
+            startPosition = carla.Transform(carla.Location(startX, y=199.0, z=40.0))
+            self._vehicle = world.spawn_actor(blueprint, startPosition)
             self._vehicle.set_autopilot(self._autopilot_enabled)
             cam_blueprint = world.get_blueprint_library().find('sensor.camera.rgb')
             cam_blueprint.set_attribute('image_size_x', str(320))
