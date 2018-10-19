@@ -99,7 +99,7 @@ class CarlaGame(object):
 
             world = self._client.get_world()
             blueprint = random.choice(world.get_blueprint_library().filter('vehicle'))
-            startX = float(randrange(130, 350, 10))
+            startX = float(random.randrange(130, 350, 10))
             startPosition = carla.Transform(carla.Location(startX, y=199.0, z=40.0))
             self._vehicle = world.spawn_actor(blueprint, startPosition)
             self._vehicle.set_autopilot(self._autopilot_enabled)
